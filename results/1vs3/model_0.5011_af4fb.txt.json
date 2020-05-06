@@ -1,0 +1,29 @@
+{
+    "best_val_accuracy": 0.5011000037193298,
+    "best_val_loss": 0.6931508255004882,
+    "loss": -0.5011000037193298,
+    "model_name": "model_0.5011_af4fb",
+    "real_loss": 0.6931508255004882,
+    "space": {
+        "activation": "relu",
+        "batch_size": 100.0,
+        "conv_dropout_drop_proba": 0.19486290419976177,
+        "conv_hiddn_units_mult": 1.1647388635494773,
+        "conv_kernel_size": 3.0,
+        "conv_pool_res_start_idx": 0.0,
+        "epochs": 170.0,
+        "fc_dropout_drop_proba": 0.06313620886076396,
+        "fc_units_1_mult": 1.1769109790638208,
+        "first_conv": null,
+        "l2_weight_reg_mult": 0.4637789335101633,
+        "lr_rate_mult": 0.9493508635650989,
+        "nb_conv_pool_layers": 3,
+        "one_more_fc": 1.11933717108272,
+        "optimizer": "Adam",
+        "pooling_type": "inception",
+        "res_conv_kernel_size": 3.0,
+        "residual": null,
+        "use_BN": false
+    },
+    "status": "ok"
+}

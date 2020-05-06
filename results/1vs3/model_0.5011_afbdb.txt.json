@@ -1,0 +1,29 @@
+{
+    "best_val_accuracy": 0.5011000037193298,
+    "best_val_loss": 0.693148048222065,
+    "loss": -0.5011000037193298,
+    "model_name": "model_0.5011_afbdb",
+    "real_loss": 0.6931483581662178,
+    "space": {
+        "activation": "elu",
+        "batch_size": 50.0,
+        "conv_dropout_drop_proba": 0.34967544449331633,
+        "conv_hiddn_units_mult": 0.8475473439780292,
+        "conv_kernel_size": 4.0,
+        "conv_pool_res_start_idx": 2.0,
+        "epochs": 180.0,
+        "fc_dropout_drop_proba": 0.020848804132747277,
+        "fc_units_1_mult": 1.4314292254198053,
+        "first_conv": null,
+        "l2_weight_reg_mult": 0.7728933065535771,
+        "lr_rate_mult": 1.0387462273281982,
+        "nb_conv_pool_layers": 3,
+        "one_more_fc": 1.3367413118825315,
+        "optimizer": "Adam",
+        "pooling_type": "inception",
+        "res_conv_kernel_size": 4.0,
+        "residual": null,
+        "use_BN": false
+    },
+    "status": "ok"
+}

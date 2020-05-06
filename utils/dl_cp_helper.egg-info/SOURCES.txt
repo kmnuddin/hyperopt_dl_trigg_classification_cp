@@ -1,0 +1,5 @@
+setup.py
+dl_cp_helper.egg-info/PKG-INFO
+dl_cp_helper.egg-info/SOURCES.txt
+dl_cp_helper.egg-info/dependency_links.txt
+dl_cp_helper.egg-info/top_level.txt

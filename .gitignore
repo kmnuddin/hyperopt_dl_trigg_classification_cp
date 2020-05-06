@@ -1,0 +1,7 @@
+all_data
+data_bts_1
+__pycache__
+.ipynb_checkpoints
+*.h5
+*.hdf5
+weights
