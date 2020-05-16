@@ -26,15 +26,15 @@ __notice__ = (
 
 
 TENSORBOARD_DIR = "TensorBoard/"
-WEIGHTS_DIR = "weights/"
+WEIGHTS_DIR = "models/"
 
 
 NB_CHANNELS = 3
 IMAGE_BORDER_LENGTH = 128
 
-h = Helper('topomaps_15vs3/train/combined', 'topomaps_15vs3/test/combined', 'results/1vs3')
+h = Helper('topomaps_RT/train/combined/', 'topomaps_RT/test/combined/', 'results/RT_100')
 
-NB_CLASSES = 2
+NB_CLASSES = 3
 
 # (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 
@@ -73,7 +73,7 @@ def build_and_train(hype_space, save_best_weights=False, log_for_tensorboard=Fal
     # Weight saving callback:
     if save_best_weights:
         weights_save_path = os.path.join(
-            WEIGHTS_DIR, '{}.hdf5'.format(model_uuid))
+            WEIGHTS_DIR, '{}_RT.h5'.format(model_uuid))
         print("Model's weights will be saved to: {}".format(weights_save_path))
         if not os.path.exists(WEIGHTS_DIR):
             os.makedirs(WEIGHTS_DIR)
@@ -127,7 +127,7 @@ def build_and_train(hype_space, save_best_weights=False, log_for_tensorboard=Fal
     score = model.evaluate(test_it, verbose=0)
     max_acc = max(history['val_accuracy'])
     #
-    model_name = "model_{}_{}".format(str(max_acc), str(uuid.uuid4())[:5])
+    model_name = "model_{:.2f}_id_{}".format(round(max_acc, 2), model_uuid)
     print("Model name: {}".format(model_name))
     print(max_acc)
     # Note: to restore the model, you'll need to have a keras callback to
@@ -234,7 +234,7 @@ def build_model(hype_space):
     # Two heads as outputs:
     fine_outputs = keras.layers.Dense(
         units=NB_CLASSES,
-        activation="sigmoid",
+        activation="softmax",
         kernel_regularizer=keras.regularizers.l2(
             STARTING_L2_REG * hype_space['l2_weight_reg_mult']),
     )(current_layer)
@@ -246,7 +246,7 @@ def build_model(hype_space):
     )
     model.compile(
         optimizer=OPTIMIZER_STR_TO_CLASS[hype_space['optimizer']](
-            lr=0.00001 * hype_space['lr_rate_mult']
+            lr=0.0001 * hype_space['lr_rate_mult']
         ),
         loss='categorical_crossentropy',
         metrics=['accuracy']

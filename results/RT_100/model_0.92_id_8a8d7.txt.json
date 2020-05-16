@@ -1,0 +1,29 @@
+{
+    "best_val_accuracy": 0.9167371988296509,
+    "best_val_loss": 0.4265000999422002,
+    "loss": -0.9167371988296509,
+    "model_name": "model_0.92_id_8a8d7",
+    "real_loss": 0.4424230823839517,
+    "space": {
+        "activation": "elu",
+        "batch_size": 80.0,
+        "conv_dropout_drop_proba": 0.22826807855041586,
+        "conv_hiddn_units_mult": 0.7339845739576357,
+        "conv_kernel_size": 3.0,
+        "conv_pool_res_start_idx": 1.0,
+        "epochs": 90.0,
+        "fc_dropout_drop_proba": 0.48820991020593374,
+        "fc_units_1_mult": 1.0972395305068594,
+        "first_conv": 3,
+        "l2_weight_reg_mult": 1.446881295121038,
+        "lr_rate_mult": 0.835771672257002,
+        "nb_conv_pool_layers": 3,
+        "one_more_fc": 0.736200615430108,
+        "optimizer": "Nadam",
+        "pooling_type": "avg",
+        "res_conv_kernel_size": 3.0,
+        "residual": null,
+        "use_BN": false
+    },
+    "status": "ok"
+}

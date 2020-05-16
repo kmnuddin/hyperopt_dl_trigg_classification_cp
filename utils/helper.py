@@ -24,7 +24,7 @@ class Helper:
             os.mkdir(self.model_directory)
 
         if not os.path.exists(self.results_directory):
-            os.mkdir(self.results_directory)
+            os.makedirs(self.results_directory)
 
         if not os.path.exists('logs'):
             os.mkdir('logs')

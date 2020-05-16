@@ -1,0 +1,29 @@
+{
+    "best_val_accuracy": 0.9419512748718262,
+    "best_val_loss": 0.29918898899752394,
+    "loss": -0.9419512748718262,
+    "model_name": "model_0.94_id_d9e1f",
+    "real_loss": 0.3879965783509993,
+    "space": {
+        "activation": "elu",
+        "batch_size": 80.0,
+        "conv_dropout_drop_proba": 0.1505803802942428,
+        "conv_hiddn_units_mult": 1.0681894003366463,
+        "conv_kernel_size": 4.0,
+        "conv_pool_res_start_idx": 2.0,
+        "epochs": 120.0,
+        "fc_dropout_drop_proba": 0.37738596785104334,
+        "fc_units_1_mult": 0.7258360237478453,
+        "first_conv": null,
+        "l2_weight_reg_mult": 0.6829693498905043,
+        "lr_rate_mult": 1.3271882399584007,
+        "nb_conv_pool_layers": 3,
+        "one_more_fc": 0.5988241367000412,
+        "optimizer": "Nadam",
+        "pooling_type": "max",
+        "res_conv_kernel_size": 3.0,
+        "residual": null,
+        "use_BN": true
+    },
+    "status": "ok"
+}

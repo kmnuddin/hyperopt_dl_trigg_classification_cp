@@ -22,7 +22,7 @@ __notice__ = (
     "behalf of Vooban Inc. and belongs to Vooban Inc. ")
 # See: https://github.com/Vooban/Hyperopt-Keras-CNN-CIFAR-100/blob/master/LICENSE"
 
-h = Helper('topomaps_1vs5/train/combined', 'topomaps_1vs5/test/combined', 'results/1vs3')
+h = Helper('topomaps_RT/train/combined/', 'topomaps_RT/test/combined/', 'results/RT_100')
 
 space = {
     # This loguniform scale will multiply the learning rate, so as to make
@@ -34,7 +34,7 @@ space = {
     # Batch size fed for each gradient update
     'batch_size': hp.quniform('batch_size', 40, 128, 10),
     # Number of EPOCHS
-    'epochs': hp.quniform('epochs', 10, 200, 10),
+    'epochs': hp.quniform('epochs', 10, 120, 10),
     # Choice of optimizer:
     'optimizer': hp.choice('optimizer', ['Adam', 'Nadam', 'RMSprop']),
     # Uniform distribution in finding appropriate dropout values, conv layers
@@ -138,7 +138,7 @@ def plot_best_model():
 def optimize_cnn(hype_space):
     """Build a convolutional neural network and train it."""
     try:
-        model, model_name, result, _ = build_and_train(hype_space)
+        model, model_name, result, _ = build_and_train(hype_space, save_best_weights=True, log_for_tensorboard=True)
 
         # Save training results to disks with unique filenames
         h.save_json_result(model_name, result)
@@ -174,7 +174,7 @@ def run_a_trial():
 
     try:
         # https://github.com/hyperopt/hyperopt/issues/267
-        trials = pickle.load(open("results.pkl", "rb"))
+        trials = pickle.load(open("results_RT.pkl", "rb"))
         print("Found saved Trials! Loading...")
         max_evals = len(trials.trials) + nb_evals
         print("Rerunning from {} trials to add another one.".format(
@@ -190,7 +190,7 @@ def run_a_trial():
         trials=trials,
         max_evals=max_evals
     )
-    pickle.dump(trials, open("results.pkl", "wb"))
+    pickle.dump(trials, open("results_RT.pkl", "wb"))
 
     print("\nOPTIMIZATION STEP COMPLETE.\n")
 
