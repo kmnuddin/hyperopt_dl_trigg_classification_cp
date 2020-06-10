@@ -22,7 +22,7 @@ __notice__ = (
     "behalf of Vooban Inc. and belongs to Vooban Inc. ")
 # See: https://github.com/Vooban/Hyperopt-Keras-CNN-CIFAR-100/blob/master/LICENSE"
 
-h = Helper('topomaps_RT/train/combined/', 'topomaps_RT/test/combined/', 'results/RT_100')
+h = Helper('topomaps_RT_100/train/combined/', 'topomaps_RT_100/test/combined/', 'results/RT_100')
 
 space = {
     # This loguniform scale will multiply the learning rate, so as to make

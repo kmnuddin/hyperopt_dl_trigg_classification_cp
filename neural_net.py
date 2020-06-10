@@ -32,7 +32,7 @@ WEIGHTS_DIR = "models/"
 NB_CHANNELS = 3
 IMAGE_BORDER_LENGTH = 128
 
-h = Helper('topomaps_RT/train/combined/', 'topomaps_RT/test/combined/', 'results/RT_100')
+h = Helper('topomaps_RT_100/train/combined/', 'topomaps_RT_100/test/combined/', 'results/RT_100')
 
 NB_CLASSES = 3
 
